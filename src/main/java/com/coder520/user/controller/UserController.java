@@ -46,6 +46,7 @@ public class UserController {
       @RequestMapping("/userinfo")
       @ResponseBody
        public user  getUser(HttpSession session){
+
          user user= (com.coder520.user.entity.user) session.getAttribute("userinfo");
          return user;
       }
