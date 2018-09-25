@@ -20,6 +20,38 @@
     from attend
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectTodaySignRecord" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from attend
+    where user_id = #{userId,jdbcType=BIGINT}
+    AND attend_date=CURRENT_DATE()
+  </select>
+  <select id="countByCondition" resultMap="BaseResultMap" >
+    select
+    count(0)
+    from attend
+    where user_id = #{userId}
+    <if test="startDate != null and endDate != null" >
+      AND attend_date BETWEEN  #{startDate} AND  #{endDate}
+    </if>
+    <if test="attendStatus != null" >
+      AND  attend_status = #{attendStatus}
+    </if>
+  </select>
+  <select id="selectAttendPage" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from attend
+    where user_id = #{userId}
+    <if test="startDate !=null and endDate !=null" >
+      AND attend_date BETWEEN  #{startDate} AND  #{endDate}
+    </if>
+    <if test="attendStatus != null" >
+      AND  attend_status = #{attendStatus}
+    </if>
+    LIMIT  #{startRow} , #{pageSize}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from attend
     where id = #{id,jdbcType=BIGINT}

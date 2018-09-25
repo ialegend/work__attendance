@@ -2,6 +2,8 @@ package com.coder520.attent.controller;
 
 import com.coder520.attent.entity.Attend;
 import com.coder520.attent.service.AttendService;
+import com.coder520.attent.vo.QueryCondition;
+import com.coder520.common.page.PageQueryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ public class AttendController {
     private AttendService attendService;
 //    @Autowired
 //    private AttendMapper attendMapper;
+    @RequestMapping("index")
     public String toAttend(){
 
        return "attend";
@@ -28,5 +31,13 @@ public class AttendController {
         attendService.signAttend(attend);
         //attendMapper.insertSelective(attend);
         return "succ";
+   }
+/**考情数据分页查询*/
+@RequestMapping("/signList")
+@ResponseBody
+   public PageQueryBean listAttend(QueryCondition condition){
+       System.out.println(condition.getEndDate()+"okokoko");
+       PageQueryBean result=attendService.listAttend(condition);
+       return result;
    }
 }

@@ -113,7 +113,7 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/attend">打卡记录</a></li>
+                        <li><a href="/attend/index">打卡记录</a></li>
                         <li><a href="/reAttend">补签记录</a></li>
                         </require><li><a href="/reAttend/list">待办补签</a></li>
                     </ul>
