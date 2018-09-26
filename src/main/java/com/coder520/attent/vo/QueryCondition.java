@@ -7,6 +7,15 @@ public class QueryCondition extends PageQueryBean {
     private String startDate;
     private String endDate;
     private Byte attendStatus;
+    private String rangeDate;
+
+    public String getRangeDate() {
+        return rangeDate;
+    }
+
+    public void setRangeDate(String rangeDate) {
+        this.rangeDate = rangeDate;
+    }
 
     public Byte getAttendStatus() {
         return attendStatus;

@@ -25,17 +25,17 @@ public class UserController {
     public String user() throws UnsupportedEncodingException, NoSuchAlgorithmException {
         System.out.println("hello！！！！");
         user use=new user();
-        use.setMobile("112213");
+        use.setMobile("9283928");
         use.setPassword("pass");
         use.setRealName("real");
-        use.setUsername("username");
-        user use2=new user();
+        use.setUsername("hello");
+        //user use2=new user();
         //use2.setId(1L);
-        use2.setMobile("8888888");
-        use2.setPassword("passWORD");
-        use2.setRealName("realNAME");
-        use2.setUsername("userNAME");
-        userservice.createUser(use2);
+        //use2.setMobile("8888888");
+        //use2.setPassword("passWORD");
+        //use2.setRealName("realNAME");
+        //use2.setUsername("userNAME");
+        userservice.createUser(use);
           return "user";
       }
       @RequestMapping("/home")

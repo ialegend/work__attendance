@@ -27,9 +27,9 @@
     <!--处理静态资源-->
     <mvc:default-servlet-handler/>
 
-    <mvc:interceptors>
+    <!--<mvc:interceptors>
         <bean class="com.coder520.common.interceptor.SessionInterceptor"/>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
 
 
     <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">

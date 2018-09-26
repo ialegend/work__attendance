@@ -69,4 +69,5 @@
         <!-- <property name="filters" value="stat" /> -->
         <property name="filters" value="mergeStat"/>
     </bean>
+    <import resource="spring-job.xml"/>
 </beans>

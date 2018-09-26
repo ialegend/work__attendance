@@ -27,7 +27,7 @@
     where user_id = #{userId,jdbcType=BIGINT}
     AND attend_date=CURRENT_DATE()
   </select>
-  <select id="countByCondition" resultMap="BaseResultMap" >
+  <select id="countByCondition" resultType="int" >
     select
     count(0)
     from attend
@@ -51,6 +51,27 @@
       AND  attend_status = #{attendStatus}
     </if>
     LIMIT  #{startRow} , #{pageSize}
+  </select>
+  <select id="selectTodayAbsence" resultType="Long">
+  SELECT
+  u.id
+  FROM user u
+  WHERE u.id NOT IN (
+   SELECT
+   a.user_id
+   FROM attend a
+   WHERE a.attend_date =CURRENT_DATE
+  )
+  </select>
+  <select id="selectTodayEveningAbsence" resultMap="BaseResultMap">
+          select
+  <include refid="Base_Column_List"/>
+  from attend
+  where
+  attend_date=CURRENT_DATE
+  AND attend_evening IS NULL
+  AND attend_status=1
+  AND attend_week NOT IN(6,7)
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from attend
@@ -118,6 +139,13 @@
         #{attendStatus,jdbcType=TINYINT},
       </if>
     </trim>
+  </insert>
+  <insert id="batchInsert" parameterType="list">
+          insert into attend(user_id,attend_date,attend_week,absence,attend_status)
+  values
+  <foreach collection="list" item="item" index="index" separator=",">
+          (#{item.userId},#{item.attendDate},#{item.attendWeek},#{item.absence},#{item.attendStatus})
+  </foreach>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.coder520.attent.entity.Attend">
     update attend
