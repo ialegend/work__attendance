@@ -10,9 +10,9 @@
       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--开启切面编程自动代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
-    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+    <!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
             <property name="securityManager" ref="securityManager"/>
-    </bean>
+    </bean>-->
   <mvc:annotation-driven>
     <mvc:message-converters>
         <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>

@@ -103,5 +103,4 @@
     <!--工作流身份识别服务-->
     <bean id="IdentityService" factory-bean="processEngine" factory-method="getIdentityService"/>
     <import resource="spring-job.xml"/>
-    <import resource="spring-shiro.xml"/>
 </beans>
