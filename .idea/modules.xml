@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://F:/work-attendance/coder520.iml" filepath="F:/work-attendance/coder520.iml" />
       <module fileurl="file://$PROJECT_DIR$/work__attendance.iml" filepath="$PROJECT_DIR$/work__attendance.iml" />
     </modules>
   </component>

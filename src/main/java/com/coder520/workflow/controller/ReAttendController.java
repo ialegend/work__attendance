@@ -1,7 +1,7 @@
-package com.coder520.workflow.controller;/**
+package com.coder520.workflow.controller;
+/**
  * Created by wangjianbin on 2017/6/28.
  */
-
 import com.coder520.user.entity.user;
 import com.coder520.workflow.entity.ReAttend;
 import com.coder520.workflow.service.ReAttendService;
@@ -45,8 +45,6 @@ public class ReAttendController {
         return "reAttend";
     }
 
-
-
     @RequestMapping("/start")
     public void startReAttendFlow(@RequestBody ReAttend reAttend, HttpSession session){
 //        user user = (user) SecurityUtils.getSubject().getSession().getAttribute("userinfo");
@@ -73,5 +71,4 @@ public class ReAttendController {
     public void approveReAttendFlow(@RequestBody ReAttend reAttend){
         reAttendService.approve(reAttend);
     }
-
 }

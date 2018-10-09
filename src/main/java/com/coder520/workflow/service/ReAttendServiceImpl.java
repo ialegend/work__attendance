@@ -1,7 +1,6 @@
 package com.coder520.workflow.service;/**
  * Created by wangjianbin on 2017/6/28.
  */
-
 import com.coder520.attent.dao.AttendMapper;
 import com.coder520.attent.entity.Attend;
 import com.coder520.workflow.dao.ReAttendMapper;
@@ -14,7 +13,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,8 +53,7 @@ public class ReAttendServiceImpl implements ReAttendService{
     @Autowired
     private RuntimeService runtimeService;
 
-    //@Autowired
-    @Resource
+    @Autowired
     private TaskService taskService;
 
     @Autowired
@@ -141,7 +138,6 @@ public class ReAttendServiceImpl implements ReAttendService{
 
 
     /**
-     *@Author JackWang [www.coder520.com]
      *@Date 2017/7/1 20:42
      *@Description 查询补签申请状态
      * @param username
@@ -152,5 +148,4 @@ public class ReAttendServiceImpl implements ReAttendService{
         System.out.println(list);
         return list;
     }
-
 }
